@@ -6,22 +6,22 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 
 const experienceData = [
   {
-    role: 'Senior Product Manager',
-    company: 'Innovate Inc.',
-    period: '2020 - Present',
-    description: 'Led a cross-functional team to launch three major product features, resulting in a 25% increase in user engagement. Defined product strategy and roadmap based on market research and user feedback. Managed the entire product lifecycle from concept to launch and beyond.',
+    role: 'Technical Support Assistant (Part-time)',
+    company: 'George Washington University',
+    period: '01/2024 – 05/2025',
+    description: 'At GWU, I contributed to the development and operational launch of the MyGWU mobile app, designed to enhance the student experience by integrating schedule syncing, campus alerts, and email. I collaborated cross-functionally with IT, design, and QA teams to manage sprint planning and backlog grooming. Through iterative testing and user feedback, I helped drive key usability improvements and ensured alignment with stakeholder requirements within an Agile environment.',
   },
   {
     role: 'Product Manager',
-    company: 'Tech Solutions LLC',
-    period: '2017 - 2020',
-    description: 'Managed a suite of B2B SaaS products. Collaborated with engineering, design, and marketing to deliver high-quality products on time. Conducted user interviews and data analysis to inform product decisions, leading to a 15% improvement in customer satisfaction.',
+    company: 'Savax Credit Solutions',
+    period: '08/2020 – 07/2023',
+    description: 'As a Product Manager, I led end-to-end delivery of a B2B Vendor Payment SaaS platform, focusing on authentication and identity core capabilities. I defined the product vision and roadmap while closely collaborating with engineering and data teams to ensure timely and high-quality feature releases. Leveraging SAFe practices and Jira-based sprint management, I achieved 100% sprint delivery and helped reduce NPA by $1.8M annually. My role also involved communicating product strategy to CXOs and enabling a 25% upsell across enterprise accounts.',
   },
   {
-    role: 'Associate Product Manager',
-    company: 'Startup Hub',
-    period: '2015 - 2017',
-    description: 'Supported the product team in developing new features for a mobile application. Wrote user stories, managed the product backlog, and coordinated with the development team during sprints. Gained foundational experience in agile methodologies and product development processes.',
+    role: 'Business Analyst / Product owner',
+    company: 'PKA Constructions',
+    period: '05/ 2016 – 07/ 2020',
+    description: 'In this dual role, I spearheaded the development of a real-time labor management system that streamlined manpower planning across 10+ construction sites. By conducting hands-on user research and refining requirements through Agile delivery, I increased system adoption to 90% within the first quarter. I worked closely with development teams to translate business needs into actionable sprint goals, significantly improving coordination and reducing idle time by nearly 50%.',
   },
 ];
 

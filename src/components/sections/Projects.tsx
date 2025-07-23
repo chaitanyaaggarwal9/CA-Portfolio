@@ -10,42 +10,68 @@ import { Badge } from '@/components/ui/badge';
 
 const projectsData = [
   {
-    title: 'Project Phoenix',
-    category: 'SaaS Platform',
-    shortDesc: 'A comprehensive redesign of a B2B analytics dashboard to improve user experience and data visualization.',
+    title: 'B2B Vendor Payment Platform',
+    category: 'Fintech SaaS',
+    shortDesc: 'Defined and delivered a SaaS product reducing NPAs by $1.8M annually through automated payment workflows.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'dashboard analytics',
+    aiHint: 'payment automation',
     details: {
-      problem: "The existing analytics platform was outdated, with a cluttered UI that made it difficult for users to find key insights. User engagement was low, and customer churn was increasing.",
-      solution: "Led the end-to-end redesign, starting with extensive user research and competitor analysis. We introduced a modular dashboard, customizable widgets, and advanced data filtering. The new design was clean, intuitive, and mobile-responsive.",
-      role: "As the Senior Product Manager, I was responsible for the product vision, roadmap, and backlog. I worked closely with a team of 10 (engineers, designers, and QA) and facilitated all agile ceremonies.",
-      tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL', 'Figma'],
+      problem: "Legacy manual processing of vendor payments led to inefficiencies and a spike in NPAs.",
+      solution: "Led end-to-end development of an automated B2B payment platform with credit scoring and onboarding modules.",
+      role: "Owned product vision, roadmap, stakeholder alignment, and agile delivery over 20+ sprints.",
+      tech: ['Jira', 'Mixpanel', 'HubSpot', 'Figma', 'SQL']
     }
   },
   {
-    title: 'Mobile Growth Initiative',
-    category: 'Mobile App',
-    shortDesc: 'Launched a new gamification feature to boost daily active users and retention for a consumer-facing mobile app.',
+    title: 'MyGWU Mobile App',
+    category: 'Student Experience Platform',
+    shortDesc: 'Collaborated on launch of a university-wide mobile app with schedule syncing, email, and real-time alerts.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'mobile app',
+    aiHint: 'mobile campus app',
     details: {
-      problem: "User retention after the first week was dropping below industry benchmarks. The app lacked features that would encourage daily check-ins and long-term engagement.",
-      solution: "I conceptualized and managed the development of a gamification system including daily challenges, points, and leaderboards. This created a compelling reason for users to return daily and interact with the app's core features.",
-      role: "I drove the project from ideation to launch, defining feature requirements, writing user stories, and analyzing performance data post-launch. Coordinated with marketing for the launch campaign.",
-      tech: ['Swift', 'Kotlin', 'Firebase', 'Amplitude'],
+      problem: "Students lacked a unified digital platform for campus updates, leading to low engagement and missed alerts.",
+      solution: "Supported development and launch of MyGWU with integrated scheduling, email, and push notifications.",
+      role: "Managed sprint planning, grooming, and stakeholder standups across IT, QA, and design teams.",
+      tech: ['Firebase', 'Figma', 'React Native', 'Jira']
     }
   },
   {
-    title: 'API Integration Hub',
-    category: 'Developer Tools',
-    shortDesc: 'Developed a new platform to allow third-party developers to integrate their services with our core product.',
+    title: 'Dell Sustainability Optimization',
+    category: 'Capstone + Lifecycle Analysis',
+    shortDesc: 'Built LCA models and optimization tools for Dell’s OptiPlex line to reduce environmental footprint.',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'api code',
+    aiHint: 'lifecycle analysis',
     details: {
-      problem: "Our ecosystem was closed, limiting growth and partnership opportunities. Customers were requesting integrations with other popular tools they were using, but we had no scalable way to build them.",
-      solution: "We built a secure and well-documented API Hub. This included a developer portal with guides, API reference, and sandbox environments. This empowered external developers and created a new revenue stream through premium API access.",
-      role: "Product Manager for the developer platform. I was responsible for API design specifications, developer documentation, and creating a pricing strategy for the new service.",
-      tech: ['REST API', 'OAuth 2.0', 'Swagger', 'Stripe API'],
+      problem: "Lack of decision support in selecting sustainable components for product manufacturing.",
+      solution: "Developed optimization and emissions models using MATLAB and lifecycle datasets to identify eco-friendly configurations.",
+      role: "Designed sensitivity models, pitch decks, and impact summaries for internal sustainability reporting.",
+      tech: ['MATLAB', 'Excel', 'PowerPoint', 'LCA Tools']
+    }
+  },
+  {
+    title: 'Manpower Planning & Labor Mgmt App',
+    category: 'Construction Tech',
+    shortDesc: 'Digitized labor coordination for 10+ construction sites, reducing idle labor by ~50%.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'construction workforce app',
+    details: {
+      problem: "Manual tracking of labor across multiple sites led to resource misalignment and high idle time.",
+      solution: "Developed a mobile-first workforce tracking solution with real-time dashboards and field feedback loops.",
+      role: "Led discovery, user interviews, sprint planning, and delivery with a small Agile team.",
+      tech: ['Android', 'Firebase', 'Excel', 'User Surveys']
+    }
+  },
+  {
+    title: 'AI Astrology App',
+    category: 'AI + Mobile App Innovation',
+    shortDesc: 'Built a real-time AI astrology app using Gemini API and Firebase — all in under 60 minutes.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'ai astrology app',
+    details: {
+      problem: "Most astrology apps are either outdated or too complex for casual, Gen Z users wanting quick daily guidance.",
+      solution: "Built an interactive AI-powered astrology app using Firebase and Google Gemini API, offering conversational predictions with modern UI and social features.",
+      role: "Conceptualized, built, and launched a working MVP within 1 hour using Firebase for backend and Gemini for AI. Documented the journey in a public case study.",
+      tech: ['Firebase', 'Google Cloud', 'Gemini API', 'Tailwind CSS', 'Dark Mode', 'Push Notifications']
     }
   },
 ];

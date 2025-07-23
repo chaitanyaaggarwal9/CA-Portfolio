@@ -118,20 +118,20 @@ export function Contact() {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold">Contact Information</h3>
             <div className="space-y-4">
-              <a href="mailto:chaitanya.aggarwal@example.com" className="flex items-center gap-4 group">
+              <a href="mailto:chaitanyaaggarwal9@gmail.com" className="flex items-center gap-4 group">
                 <Mail className="h-6 w-6 text-primary" />
-                <span className="text-muted-foreground group-hover:text-primary transition-colors">chaitanya.aggarwal@example.com</span>
+                <span className="text-muted-foreground group-hover:text-primary transition-colors">chaitanyaaggarwal9@gmail.com</span>
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-4 group">
+              <a href="tel:+12025697467" className="flex items-center gap-4 group">
                 <Phone className="h-6 w-6 text-primary" />
-                <span className="text-muted-foreground group-hover:text-primary transition-colors">+1 (234) 567-890</span>
+                <span className="text-muted-foreground group-hover:text-primary transition-colors">+1 (202) 569-7467</span>
               </a>
             </div>
              <div className="space-y-2">
                 <h4 className="font-semibold">Follow Me</h4>
                 <div className="flex items-center gap-4">
                     <Button asChild variant="outline" size="icon">
-                        <Link href="#" target="_blank"><Linkedin className="h-5 w-5"/></Link>
+                        <Link href="https://www.linkedin.com/in/chaitanyaagg/" target="_blank"><Linkedin className="h-5 w-5"/></Link>
                     </Button>
                      <Button asChild variant="outline" size="icon">
                         <Link href="#" target="_blank"><Github className="h-5 w-5"/></Link>
