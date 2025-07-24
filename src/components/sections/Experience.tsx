@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
-const timelineData = [
+const educationData = [
   {
     type: 'education',
     title: 'Master of Science in Engineering Management',
@@ -13,19 +13,22 @@ const timelineData = [
     period: '08/2023 – 05/2025 (Expected)',
     description: 'Pursuing a Master\'s degree focused on bridging the gap between engineering and management, with coursework in product management, systems engineering, and technology strategy.',
   },
+];
+
+const workData = [
+  {
+    type: 'work',
+    title: 'Technical Support Assistant (Part-time)',
+    organization: 'George Washington University',
+    period: '01/2024 – 05/2025',
+    description: 'At GWU, I contributed to the development and operational launch of the MyGWU mobile app, designed to enhance the student experience by integrating schedule syncing, campus alerts, and email. I collaborated cross-functionally with IT, design, and QA teams to manage sprint planning and backlog grooming. Through iterative testing and user feedback, I helped drive key usability improvements and ensured alignment with stakeholder requirements within an Agile environment.',
+  },
   {
     type: 'work',
     title: 'Product Manager',
     organization: 'Savax Credit Solutions',
     period: '08/2020 – 07/2023',
     description: 'As a Product Manager, I led end-to-end delivery of a B2B Vendor Payment SaaS platform, focusing on authentication and identity core capabilities. I defined the product vision and roadmap while closely collaborating with engineering and data teams to ensure timely and high-quality feature releases. Leveraging SAFe practices and Jira-based sprint management, I achieved 100% sprint delivery and helped reduce NPA by $1.8M annually. My role also involved communicating product strategy to CXOs and enabling a 25% upsell across enterprise accounts.',
-  },
-   {
-    type: 'work',
-    title: 'Technical Support Assistant (Part-time)',
-    organization: 'George Washington University',
-    period: '01/2024 – 05/2025',
-    description: 'At GWU, I contributed to the development and operational launch of the MyGWU mobile app, designed to enhance the student experience by integrating schedule syncing, campus alerts, and email. I collaborated cross-functionally with IT, design, and QA teams to manage sprint planning and backlog grooming. Through iterative testing and user feedback, I helped drive key usability improvements and ensured alignment with stakeholder requirements within an Agile environment.',
   },
   {
     type: 'work',
@@ -36,22 +39,43 @@ const timelineData = [
   },
 ];
 
-
 const cardVariants = {
-  offscreen: {
-    y: 100,
-    opacity: 0,
-  },
+  offscreen: { y: 100, opacity: 0 },
   onscreen: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
+    transition: { type: "spring", bounce: 0.4, duration: 0.8 }
   }
 };
+
+const TimelineItem = ({ item }: { item: typeof workData[0] | typeof educationData[0] }) => (
+  <motion.div 
+    className="relative pl-12"
+    initial="offscreen"
+    whileInView="onscreen"
+    viewport={{ once: true, amount: 0.5 }}
+  >
+    <div className="absolute left-0 top-0.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
+       {item.type === 'work' ? <Briefcase className="h-4 w-4" /> : <GraduationCap className="h-5 w-5" />}
+    </div>
+    <motion.div variants={cardVariants}>
+      <Card className="shadow-lg transition-shadow duration-300 hover:shadow-xl">
+        <CardHeader>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.organization}</CardDescription>
+            </div>
+            <div className="text-sm text-muted-foreground flex-shrink-0">{item.period}</div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">{item.description}</p>
+        </CardContent>
+      </Card>
+    </motion.div>
+  </motion.div>
+);
 
 export function Experience() {
   return (
@@ -62,41 +86,35 @@ export function Experience() {
             Experience & Education
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl/relaxed">
-            My professional journey and academic background, highlighting key roles and milestones.
+            My professional journey and academic background.
           </p>
         </div>
-        <div className="relative mt-12 max-w-3xl mx-auto">
-          <div className="absolute left-4 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
-          <div className="relative flex flex-col gap-12">
-            {timelineData.map((item, index) => (
-              <motion.div 
-                key={index} 
-                className="relative pl-12"
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.5 }}
-              >
-                <div className="absolute left-0 top-0.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
-                   {item.type === 'work' ? <Briefcase className="h-4 w-4" /> : <GraduationCap className="h-5 w-5" />}
-                </div>
-                <motion.div variants={cardVariants}>
-                  <Card className="shadow-lg transition-shadow duration-300 hover:shadow-xl">
-                    <CardHeader>
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                          <CardTitle>{item.title}</CardTitle>
-                          <CardDescription>{item.organization}</CardDescription>
-                        </div>
-                        <div className="text-sm text-muted-foreground flex-shrink-0">{item.period}</div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            ))}
+
+        <div className="mt-16 grid gap-16 lg:grid-cols-2">
+          {/* Education Column */}
+          <div className="space-y-12">
+            <h3 className="text-center text-2xl font-bold tracking-tight text-primary md:text-3xl">Education</h3>
+            <div className="relative">
+               <div className="absolute left-4 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
+               <div className="relative flex flex-col gap-12">
+                  {educationData.map((item, index) => (
+                    <TimelineItem key={`edu-${index}`} item={item} />
+                  ))}
+               </div>
+            </div>
+          </div>
+
+          {/* Experience Column */}
+          <div className="space-y-12">
+            <h3 className="text-center text-2xl font-bold tracking-tight text-primary md:text-3xl">Work Experience</h3>
+             <div className="relative">
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
+              <div className="relative flex flex-col gap-12">
+                {workData.map((item, index) => (
+                  <TimelineItem key={`work-${index}`} item={item} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
