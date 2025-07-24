@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -26,7 +27,7 @@ const projectsData = [
     title: 'MyGWU Mobile App',
     category: 'Student Experience Platform',
     shortDesc: 'Collaborated on launch of a university-wide mobile app with schedule syncing, email, and real-time alerts.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/Screenshot 2025-07-24 at 4.51.47 PM.png',
     aiHint: 'mobile campus app',
     details: {
       problem: "Students lacked a unified digital platform for campus updates, leading to low engagement and missed alerts.",
