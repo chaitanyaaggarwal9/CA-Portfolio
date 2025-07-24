@@ -26,7 +26,7 @@ export function Header() {
       let currentSection = '';
       navItems.forEach(item => {
         const section = document.querySelector(item.href);
-        if (section) {
+        if (section instanceof HTMLElement) {
           const sectionTop = section.offsetTop;
           if (window.scrollY >= sectionTop - 150) {
             currentSection = section.id;
