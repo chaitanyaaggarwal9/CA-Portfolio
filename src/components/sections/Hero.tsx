@@ -2,11 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { FloatingShapes } from '@/components/effects/FloatingShapes';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[calc(100vh-4rem)] w-full">
-      <div className="container mx-auto flex h-full flex-col items-center justify-center text-center">
+    <section id="home" className="relative h-[calc(100vh-4rem)] w-full overflow-hidden">
+      <FloatingShapes />
+      <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center text-center">
         <div className="mb-8">
           <Image
             src="https://placehold.co/160x160.png"
