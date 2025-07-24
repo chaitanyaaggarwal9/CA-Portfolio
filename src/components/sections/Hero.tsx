@@ -18,7 +18,7 @@ export function Hero() {
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <div className="mb-8">
               <Image
-                src="https://placehold.co/160x160.png"
+                src="/home/user/studio/src/components/sections/profile-pic.png"
                 alt="Chaitanya Aggarwal"
                 width={160}
                 height={160}
