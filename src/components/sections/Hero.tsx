@@ -22,7 +22,7 @@ export function Hero() {
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <div className="mb-6">
               <Image
-                src="/profile-pic.png"
+                src="/images/profile-pic.png"
                 alt="Chaitanya Aggarwal"
                 width={150}
                 height={150}
