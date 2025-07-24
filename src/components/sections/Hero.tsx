@@ -13,9 +13,27 @@ export function Hero() {
       <div className="container relative z-10 mx-auto flex min-h-dvh items-center px-4 md:px-6">
         <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2">
           
-          {/* Right Column: Text content & Image */}
+          {/* Left Column: Animation & Image */}
+          <div className="flex flex-col items-center justify-center">
+            <div className="mb-8 hidden md:flex">
+                <ProductIdeationAnimation />
+            </div>
+            <div className="md:hidden">
+              <Image
+                src="/profile-pic.png"
+                alt="Chaitanya Aggarwal"
+                width={150}
+                height={150}
+                priority
+                className="rounded-full border-4 border-primary shadow-lg"
+                data-ai-hint="professional headshot"
+              />
+            </div>
+          </div>
+          
+          {/* Right Column: Text content */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
-            <div className="mb-6">
+             <div className="mb-6 hidden md:block">
               <Image
                 src="/profile-pic.png"
                 alt="Chaitanya Aggarwal"
@@ -40,11 +58,6 @@ export function Hero() {
                 </Link>
               </Button>
             </div>
-          </div>
-
-          {/* Left Column: Animation */}
-          <div className="hidden md:flex items-center justify-center order-first md:order-last">
-             <ProductIdeationAnimation />
           </div>
 
         </div>
