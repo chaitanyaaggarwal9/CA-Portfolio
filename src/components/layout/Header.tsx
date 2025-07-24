@@ -60,12 +60,12 @@ export function Header() {
     )}>
       <div className="container flex h-16 items-center justify-between">
         <Link href="#home" className="text-lg font-bold text-primary font-headline">
-          Chaitanya
+          Chaitanya Aggarwal
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map(item => <NavLink key={item.href} {...item} />)}
           <Button asChild size="sm">
-            <a href="/Chaitanya_Aggarwal_Resume.pdf" download>
+            <a href="/docs/CHAITANYA_AGGARWAL.pdf" download>
               <Download className="mr-2 h-4 w-4" />
               Resume
             </a>
@@ -92,7 +92,7 @@ export function Header() {
                   </SheetClose>
                 ))}
                 <Button asChild className="mt-4">
-                  <a href="/Chaitanya_Aggarwal_Resume.pdf" download>
+                  <a href="/docs/CHAITANYA_AGGARWAL.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Resume
                   </a>
