@@ -139,7 +139,6 @@ export function Projects() {
                   <DialogDescription>{project.category}</DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                  <Image src={project.image} alt={project.title} width={800} height={500} className="rounded-lg aspect-video object-cover" data-ai-hint={project.aiHint}/>
                   <div className="space-y-4 text-sm text-muted-foreground">
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Problem</h3>
