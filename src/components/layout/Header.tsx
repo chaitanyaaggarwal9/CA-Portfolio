@@ -65,7 +65,7 @@ export function Header() {
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map(item => <NavLink key={item.href} {...item} />)}
           <Button asChild size="sm">
-            <a href="/docs/CHAITANYA_AGGARWAL.pdf" download>
+            <a href="/docs/CHAITANYA_AGGARWAL.pdf" download target="_blank" rel="noopener noreferrer">
               <Download className="mr-2 h-4 w-4" />
               Resume
             </a>
@@ -92,7 +92,7 @@ export function Header() {
                   </SheetClose>
                 ))}
                 <Button asChild className="mt-4">
-                  <a href="/docs/CHAITANYA_AGGARWAL.pdf" download>
+                  <a href="/docs/CHAITANYA_AGGARWAL.pdf" download target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     Resume
                   </a>
