@@ -14,7 +14,7 @@ const projectsData = [
     title: 'B2B Vendor Payment Platform',
     category: 'Fintech SaaS',
     shortDesc: 'Defined and delivered a SaaS product reducing NPAs by $1.8M annually through automated payment workflows.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/b2b.png',
     aiHint: 'payment automation',
     details: {
       problem: "Legacy manual processing of vendor payments led to inefficiencies and a spike in NPAs.",
@@ -27,7 +27,7 @@ const projectsData = [
     title: 'MyGWU Mobile App',
     category: 'Student Experience Platform',
     shortDesc: 'Collaborated on launch of a university-wide mobile app with schedule syncing, email, and real-time alerts.',
-    image: '/images/Screenshot 2025-07-24 at 4.51.47 PM.png',
+    image: '/images/my-gwu.png',
     aiHint: 'mobile campus app',
     details: {
       problem: "Students lacked a unified digital platform for campus updates, leading to low engagement and missed alerts.",
@@ -40,7 +40,7 @@ const projectsData = [
     title: 'Dell Sustainability Optimization',
     category: 'Capstone + Lifecycle Analysis',
     shortDesc: 'Built LCA models and optimization tools for Dell’s OptiPlex line to reduce environmental footprint.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/dell.png',
     aiHint: 'lifecycle analysis',
     details: {
       problem: "Lack of decision support in selecting sustainable components for product manufacturing.",
@@ -53,7 +53,7 @@ const projectsData = [
     title: 'Manpower Planning & Labor Mgmt App',
     category: 'Construction Tech',
     shortDesc: 'Digitized labor coordination for 10+ construction sites, reducing idle labor by ~50%.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/man.png',
     aiHint: 'construction workforce app',
     details: {
       problem: "Manual tracking of labor across multiple sites led to resource misalignment and high idle time.",
@@ -66,7 +66,7 @@ const projectsData = [
     title: 'AI Astrology App',
     category: 'AI + Mobile App Innovation',
     shortDesc: 'Built a real-time AI astrology app using Gemini API and Firebase — all in under 60 minutes.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/astro-ai.png',
     aiHint: 'ai astrology app',
     details: {
       problem: "Most astrology apps are either outdated or too complex for casual, Gen Z users wanting quick daily guidance.",
