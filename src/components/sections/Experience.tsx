@@ -37,45 +37,42 @@ const timelineData = [
 ];
 
 const cardVariants = {
-  offscreen: { y: 100, opacity: 0 },
+  offscreen: { x: 100, opacity: 0 },
   onscreen: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: { type: "spring", bounce: 0.4, duration: 0.8 }
   }
 };
 
-const TimelineItem = ({ item, isLeft }: { item: typeof timelineData[0], isLeft: boolean }) => (
-  <motion.div 
-    className={`relative flex justify-between items-center w-full ${isLeft ? 'flex-row-reverse' : ''}`}
-    initial="offscreen"
-    whileInView="onscreen"
-    viewport={{ once: true, amount: 0.5 }}
-    variants={cardVariants}
-  >
-    <div className="w-1/2"></div>
-    <div className="relative z-10">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-8 ring-secondary/50">
-            {item.type === 'work' ? <Briefcase className="h-5 w-5" /> : <GraduationCap className="h-5 w-5" />}
-        </div>
-    </div>
-    <div className={`w-1/2 p-4 ${isLeft ? 'text-right' : 'text-left'}`}>
-      <Card className="shadow-lg transition-shadow duration-300 hover:shadow-xl text-left">
-        <CardHeader>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.organization}</CardDescription>
+const TimelineItem = ({ item }: { item: typeof timelineData[0] }) => (
+    <motion.div
+      className="relative pl-8"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={cardVariants}
+    >
+        <div className="absolute -left-3 top-1 z-10">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-8 ring-secondary/50">
+                {item.type === 'work' ? <Briefcase className="h-4 w-4" /> : <GraduationCap className="h-4 w-4" />}
             </div>
-            <div className="text-sm text-muted-foreground flex-shrink-0">{item.period}</div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">{item.description}</p>
-        </CardContent>
-      </Card>
-    </div>
-  </motion.div>
+        </div>
+        <Card className="shadow-lg transition-shadow duration-300 hover:shadow-xl text-left hover:bg-primary/5">
+            <CardHeader>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <CardTitle>{item.title}</CardTitle>
+                        <CardDescription>{item.organization}</CardDescription>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex-shrink-0">{item.period}</div>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-muted-foreground text-justify">{item.description}</p>
+            </CardContent>
+        </Card>
+    </motion.div>
 );
 
 export function Experience() {
@@ -91,11 +88,11 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="relative mt-16 max-w-5xl mx-auto">
-          <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2" aria-hidden="true" />
+        <div className="relative mt-16 max-w-3xl mx-auto">
+          <div className="absolute left-0 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
           <div className="relative flex flex-col gap-12">
             {timelineData.map((item, index) => (
-              <TimelineItem key={`item-${index}`} item={item} isLeft={index % 2 !== 0} />
+              <TimelineItem key={`item-${index}`} item={item} />
             ))}
           </div>
         </div>

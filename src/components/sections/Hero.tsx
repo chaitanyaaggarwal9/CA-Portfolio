@@ -23,7 +23,7 @@ export function Hero() {
 
           <p className="mt-4 text-xl text-gray-300">A Product Manager & Tech Innovator</p>
 
-          <p className="mt-6 text-md text-gray-400 leading-relaxed">
+          <p className="mt-6 text-md text-gray-400 leading-relaxed text-justify">
             With a strong foundation in agile development, user research, and cross-functional team collaboration, 
             I specialize in building scalable digital products that solve real-world problems. Passionate about blending 
             business strategy with user-centric design to create high-impact experiences.

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-const SHAPE_COUNT = 20;
+const SHAPE_COUNT = 40;
 const SHAPE_TYPES = ['circle', 'square', 'triangle'];
 const COLORS = [
   'hsl(var(--primary) / 0.1)',
@@ -48,7 +48,7 @@ export function FloatingShapes() {
         x: Math.random() * 100,
         y: Math.random() * 100,
         duration: Math.random() * 20 + 15,
-        delay: Math.random() * 5,
+        delay: Math.random() * 0.4,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
       }));
       setShapes(newShapes);
