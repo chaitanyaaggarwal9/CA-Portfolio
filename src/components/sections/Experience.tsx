@@ -2,78 +2,34 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const timelineData = [
+const experienceData = [
     {
-        type: 'education',
         title: 'Master of Science in Engineering Management',
         organization: 'George Washington University',
         period: '08/2023 – 05/2025',
         description: 'Pursuing a Master\'s degree focused on bridging the gap between engineering and management, with coursework in product management, systems engineering, and technology strategy.',
       },
       {
-        type: 'work',
         title: 'Technical Support Assistant (Part-time)',
         organization: 'George Washington University',
         period: '01/2024 – 05/2025',
         description: 'At GWU, I contributed to the development and operational launch of the MyGWU mobile app, designed to enhance the student experience by integrating schedule syncing, campus alerts, and email. I collaborated cross-functionally with IT, design, and QA teams to manage sprint planning and backlog grooming. Through iterative testing and user feedback, I helped drive key usability improvements and ensured alignment with stakeholder requirements within an Agile environment.',
       },
       {
-        type: 'work',
         title: 'Product Manager',
         organization: 'Savax Credit Solutions',
         period: '08/2020 – 07/2023',
         description: 'As a Product Manager, I led end-to-end delivery of a B2B Vendor Payment SaaS platform, focusing on authentication and identity core capabilities. I defined the product vision and roadmap while closely collaborating with engineering and data teams to ensure timely and high-quality feature releases. Leveraging SAFe practices and Jira-based sprint management, I achieved 100% sprint delivery and helped reduce NPA by $1.8M annually. My role also involved communicating product strategy to CXOs and enabling a 25% upsell across enterprise accounts.',
       },
       {
-        type: 'work',
         title: 'Business Analyst / Product owner',
         organization: 'PKA Constructions',
         period: '05/2016 – 07/2020',
         description: 'In this dual role, I spearheaded the development of a real-time labor management system that streamlined manpower planning across 10+ construction sites. By conducting hands-on user research and refining requirements through Agile delivery, I increased system adoption to 90% within the first quarter. I worked closely with development teams to translate business needs into actionable sprint goals, significantly improving coordination and reducing idle time by nearly 50%.',
       },
 ];
-
-const cardVariants = {
-  offscreen: { x: 100, opacity: 0 },
-  onscreen: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "spring", bounce: 0.4, duration: 0.8 }
-  }
-};
-
-const TimelineItem = ({ item }: { item: typeof timelineData[0] }) => (
-    <motion.div
-      className="relative pl-8"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.5 }}
-      variants={cardVariants}
-    >
-        <div className="absolute -left-3 top-1 z-10">
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-8 ring-secondary/50">
-                {item.type === 'work' ? <Briefcase className="h-4 w-4" /> : <GraduationCap className="h-4 w-4" />}
-            </div>
-        </div>
-        <Card className="shadow-lg transition-shadow duration-300 hover:shadow-xl text-left hover:bg-primary/5">
-            <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <CardTitle>{item.title}</CardTitle>
-                        <CardDescription>{item.organization}</CardDescription>
-                    </div>
-                    <div className="text-sm text-muted-foreground flex-shrink-0">{item.period}</div>
-                </div>
-            </CardHeader>
-            <CardContent>
-                <p className="text-sm text-muted-foreground text-justify">{item.description}</p>
-            </CardContent>
-        </Card>
-    </motion.div>
-);
 
 export function Experience() {
   return (
@@ -88,14 +44,45 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="relative mt-16 max-w-3xl mx-auto">
-          <div className="absolute left-0 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
-          <div className="relative flex flex-col gap-12">
-            {timelineData.map((item, index) => (
-              <TimelineItem key={`item-${index}`} item={item} />
+        <motion.div 
+            className="mt-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+        >
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {experienceData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <AccordionItem 
+                  value={`item-${index}`} 
+                  className="border border-border rounded-lg bg-background/50 backdrop-blur-sm transition-shadow hover:shadow-lg"
+                >
+                  <AccordionTrigger className="p-6 text-left hover:no-underline">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-2">
+                        <div className="flex-grow">
+                            <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+                            <p className="text-sm text-muted-foreground">{item.organization}</p>
+                        </div>
+                        <p className="text-xs text-muted-foreground flex-shrink-0 sm:ml-4">{item.period}</p>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <p className="text-muted-foreground text-justify">
+                      {item.description}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
