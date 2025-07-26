@@ -1,15 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FloatingShapes } from '@/components/effects/FloatingShapes';
 import { Button } from '@/components/ui/button';
 
 
 export function Hero() {
   return (
-    <section id="home" className="relative w-full bg-black text-white py-24 md:py-32 overflow-hidden">
-      {/* Background Animation */}
-      <FloatingShapes />
-
+    <section id="home" className="relative w-full py-24 md:py-32 overflow-hidden">
       {/* Main Content */}
       <div className="container relative z-10 mx-auto flex flex-col-reverse items-center px-4 md:flex-row md:justify-between md:px-6">
 

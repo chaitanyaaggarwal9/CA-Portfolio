@@ -8,7 +8,7 @@ import { Contact } from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh w-full flex-col bg-background">
+    <div className="flex min-h-dvh w-full flex-col">
       <Header />
       <main className="flex-1">
         <Hero />
@@ -18,7 +18,7 @@ export default function Home() {
         <Toolbox />
         <Contact />
       </main>
-      <footer className="w-full bg-background py-6 text-center text-sm text-muted-foreground">
+      <footer className="w-full bg-background/50 py-6 text-center text-sm text-muted-foreground">
         <div className="container">
           <p>&copy; {new Date().getFullYear()} Chaitanya Aggarwal. All rights reserved.</p>
         </div>

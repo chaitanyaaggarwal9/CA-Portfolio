@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { FloatingShapes } from '@/components/effects/FloatingShapes';
 
 export const metadata: Metadata = {
   title: 'Chaitanya Aggarwal | Product Manager',
@@ -21,8 +22,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <GoogleAnalytics />
       </head>
-      <body className="font-body antialiased"suppressHydrationWarning >
-        {children}
+      <body className="font-body antialiased" suppressHydrationWarning >
+        <FloatingShapes />
+        <div className="relative z-10">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>

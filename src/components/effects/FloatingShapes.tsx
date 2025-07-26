@@ -40,6 +40,12 @@ export function FloatingShapes() {
   const [shapes, setShapes] = useState<Shape[]>([]);
 
   useEffect(() => {
+    // This check is important to prevent this effect from running on the server
+    // which can cause hydration errors.
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const generateShapes = () => {
       const newShapes = Array.from({ length: SHAPE_COUNT }).map((_, i) => ({
         id: i,
@@ -61,7 +67,7 @@ export function FloatingShapes() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 h-full w-full">
+    <div className="fixed inset-0 z-0 h-full w-full">
       {shapes.map((shape) => (
         <motion.div
           key={shape.id}

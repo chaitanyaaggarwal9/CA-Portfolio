@@ -68,6 +68,7 @@
     background: linear-gradient(-45deg, hsl(var(--background)), #111827, #3730a3, #0c4a6e);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    position: relative;
   }
   html {
     scroll-behavior: smooth;
