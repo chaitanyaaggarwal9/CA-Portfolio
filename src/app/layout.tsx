@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { FloatingShapes } from '@/components/effects/FloatingShapes';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'Chaitanya Aggarwal | Product Manager',
@@ -23,11 +24,13 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className="font-body antialiased relative" suppressHydrationWarning >
-        <FloatingShapes />
-        <div className="relative z-10">
-          {children}
-        </div>
-        <Toaster />
+        <TooltipProvider>
+          <FloatingShapes />
+          <div className="relative z-10">
+            {children}
+          </div>
+          <Toaster />
+        </TooltipProvider>
       </body>
     </html>
   );
