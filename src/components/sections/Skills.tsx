@@ -1,96 +1,198 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Eye, Rocket, Zap, TrendingUp, Lightbulb, Users, ShieldCheck, Milestone } from 'lucide-react';
 
-const skillsData = [
-  {
-    name: 'Product Management & Strategy',
-    level: 95,
-    description: 'Expertise in product discovery, roadmap planning, MVP definition, and agile execution across diverse domains like fintech and education.'
-  },
-  {
-    name: 'Agile Delivery & Scrum',
-    level: 90,
-    description: 'Led 20+ sprints, managed backlog grooming, sprint planning, retrospectives, and cross-functional standups using Jira and Confluence.'
-  },
-  {
-    name: 'Data-Driven Decision Making',
-    level: 85,
-    description: 'Used SQL, Google Data Studio, and analytics tools to drive prioritization, KPI modeling, and performance measurement.'
-  },
-  {
-    name: 'User Research & Product Design',
-    level: 85,
-    description: 'Conducted interviews, surveys, and usability testing to inform UI/UX design and feature prioritization in collaboration with Figma and field teams.'
-  },
-  {
-    name: 'Cross-functional Leadership',
-    level: 90,
-    description: 'Collaborated across engineering, design, QA, and business stakeholders to ship scalable products and improve time-to-resolution.'
-  },
-  {
-    name: 'Technical Tooling & Integration',
-    level: 80,
-    description: 'Hands-on with Firebase, REST APIs, mobile app frameworks, Postman, SQL, and LCA modeling tools for sustainable development.'
-  }
-];
+const skillsData = {
+  discovery: [
+    {
+      name: 'User Research & Design',
+      icon: Users,
+      description: 'Conducting interviews, surveys, and usability testing to inform UI/UX design and feature prioritization.'
+    },
+    {
+      name: 'Market Analysis',
+      icon: Eye,
+      description: 'Identifying market opportunities, competitive landscapes, and customer pain points to define product direction.'
+    },
+  ],
+  strategy: [
+    {
+      name: 'Product Roadmapping',
+      icon: Milestone,
+      description: 'Developing and maintaining product roadmaps, defining MVP, and planning feature releases in line with business goals.'
+    },
+    {
+      name: 'Data-Driven Decisions',
+      icon: Rocket,
+      description: 'Using SQL, Google Data Studio, and analytics to drive prioritization, KPI modeling, and performance measurement.'
+    },
+  ],
+  delivery: [
+    {
+      name: 'Agile & Scrum Leadership',
+      icon: Zap,
+      description: 'Leading 20+ sprints, managing backlogs, sprint planning, and retrospectives using Jira and Confluence.'
+    },
+    {
+      name: 'Cross-functional Collaboration',
+      icon: Users,
+      description: 'Collaborating across engineering, design, QA, and business stakeholders to ship scalable products effectively.'
+    },
+  ],
+  growth: [
+    {
+      name: 'A/B Testing & Optimization',
+      icon: TrendingUp,
+      description: 'Designing and analyzing A/B tests to optimize funnels, improve user engagement, and drive growth.'
+    },
+    {
+      name: 'Feature Adoption & Feedback Loops',
+      icon: Lightbulb,
+      description: 'Monitoring feature adoption, gathering user feedback post-launch, and iterating to enhance user satisfaction.'
+    },
+  ]
+};
+
+const fadeInAnimation = {
+  initial: { opacity: 0, y: 20 },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.1, duration: 0.5 }
+  }),
+};
 
 export function Skills() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <section id="skills" className="w-full py-20 md:py-24 lg:py-32 bg-secondary/50">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">Skills Matrix</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">A Framework for Action</h2>
           <p className="mt-4 text-muted-foreground md:text-xl/relaxed">
-            A tailored overview of my product management capabilities—from discovery and delivery to stakeholder leadership and data fluency.
+            My skills are grounded in a structured product lifecycle approach, ensuring ideas are not just born, but are strategically developed, delivered, and scaled.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {skillsData.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.03, rotate: -1 }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <Card
-                className={`flex h-full flex-col text-center transition duration-300 ease-in-out shadow-md hover:shadow-xl rounded-2xl ${
-                  hoveredIndex === index ? 'bg-primary/10' : 'bg-white/70 dark:bg-zinc-900/30'
-                }`}
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold tracking-tight text-foreground">
-                    {skill.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col justify-between px-4 pb-6">
-                  <motion.p
-                    className="text-sm text-muted-foreground mb-4 flex-grow"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+
+        <motion.div
+          className="mt-12 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Tabs defaultValue="discovery" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">
+              <TabsTrigger value="discovery" className="py-2"><Eye className="mr-2 h-4 w-4" />Discovery</TabsTrigger>
+              <TabsTrigger value="strategy" className="py-2"><Rocket className="mr-2 h-4 w-4" />Strategy</TabsTrigger>
+              <TabsTrigger value="delivery" className="py-2"><Zap className="mr-2 h-4 w-4" />Delivery</TabsTrigger>
+              <TabsTrigger value="growth" className="py-2"><TrendingUp className="mr-2 h-4 w-4" />Growth</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="discovery">
+              <div className="grid gap-6 md:grid-cols-2 mt-6">
+                {skillsData.discovery.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    custom={index}
+                    variants={fadeInAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
                   >
-                    {skill.description}
-                  </motion.p>
-                  <Progress
-                    value={skill.level}
-                    aria-label={`${skill.name} proficiency`}
-                    className="h-2 bg-muted-foreground/20"
-                  />
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+                    <Card className="h-full bg-background/60">
+                      <CardHeader className="flex flex-row items-center gap-4">
+                        <skill.icon className="h-8 w-8 text-primary" />
+                        <CardTitle>{skill.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{skill.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="strategy">
+               <div className="grid gap-6 md:grid-cols-2 mt-6">
+                {skillsData.strategy.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    custom={index}
+                    variants={fadeInAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    <Card className="h-full bg-background/60">
+                      <CardHeader className="flex flex-row items-center gap-4">
+                        <skill.icon className="h-8 w-8 text-primary" />
+                        <CardTitle>{skill.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{skill.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="delivery">
+               <div className="grid gap-6 md:grid-cols-2 mt-6">
+                {skillsData.delivery.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    custom={index}
+                    variants={fadeInAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    <Card className="h-full bg-background/60">
+                      <CardHeader className="flex flex-row items-center gap-4">
+                        <skill.icon className="h-8 w-8 text-primary" />
+                        <CardTitle>{skill.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{skill.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="growth">
+               <div className="grid gap-6 md:grid-cols-2 mt-6">
+                {skillsData.growth.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    custom={index}
+                    variants={fadeInAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    <Card className="h-full bg-background/60">
+                      <CardHeader className="flex flex-row items-center gap-4">
+                        <skill.icon className="h-8 w-8 text-primary" />
+                        <CardTitle>{skill.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{skill.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </motion.div>
       </div>
     </section>
   );
