@@ -2,56 +2,109 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { DoubleDiamond } from '@/components/effects/DoubleDiamond';
+import { Lightbulb, Users, Zap, BarChart4, CheckCircle } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const skillsData = [
+const skillsCategories = [
   {
-    title: 'Discover',
-    description: 'Understanding the problem space through research and empathy.',
-    skills: ['User Interviews', 'Market Analysis', 'Competitor Research', 'Usability Testing', 'Persona Development'],
-    color: 'hsl(var(--chart-1))',
+    title: 'Product Strategy',
+    icon: Lightbulb,
+    skills: [
+      'Product Vision & Roadmapping',
+      'Market & Competitor Analysis',
+      'Go-to-Market Strategy',
+      'Business Case Development',
+      'KPI & Metrics Definition',
+    ],
   },
   {
-    title: 'Define',
-    description: 'Synthesizing insights to frame the right problems and opportunities.',
-    skills: ['Product Vision', 'KPI Setting', 'MVP Definition', 'Data-Driven Prioritization', 'Roadmapping'],
-    color: 'hsl(var(--chart-2))',
+    title: 'User Research & Design',
+    icon: Users,
+    skills: [
+      'User Interviews & Surveys',
+      'Persona & Journey Mapping',
+      'Usability Testing',
+      'Wireframing & Prototyping (Figma)',
+      'A/B Testing & Validation',
+    ],
   },
   {
-    title: 'Develop',
-    description: 'Building solutions through iterative and collaborative processes.',
-    skills: ['Scrum Leadership', 'Backlog Grooming', 'Sprint Planning', 'Jira & Confluence', 'Stakeholder Comms'],
-    color: 'hsl(var(--chart-3))',
+    title: 'Execution & Agile Mgmt',
+    icon: Zap,
+    skills: [
+      'Scrum & Kanban Leadership',
+      'Backlog Grooming & Prioritization',
+      'Sprint Planning & Execution',
+      'Jira & Confluence Mastery',
+      'Stakeholder Communication',
+    ],
   },
   {
-    title: 'Deliver',
-    description: 'Launching, measuring, and optimizing the product in the market.',
-    skills: ['A/B Testing', 'Funnel Analysis', 'Feature Adoption Tracking', 'User Feedback Loops', 'Go-to-Market Strategy'],
-    color: 'hsl(var(--chart-4))',
+    title: 'Analytics & Data',
+    icon: BarChart4,
+    skills: [
+      'Funnel & Cohort Analysis',
+      'SQL for Product Insights',
+      'Amplitude, Mixpanel, GA',
+      'Data Visualization (Tableau)',
+      'Feature Adoption Tracking',
+    ],
   },
 ];
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+};
 
 export function Skills() {
   return (
     <section id="skills" className="w-full py-20 md:py-24 lg:py-32 bg-secondary/50 overflow-hidden">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">A Framework for Innovation</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">My Skillset</h2>
           <p className="mt-4 text-muted-foreground md:text-xl/relaxed">
-            I approach product management with a structured, user-centric methodology inspired by the Double Diamond framework. This ensures we solve the right problems and build effective solutions.
+            A toolbox of skills honed to transform ideas into impactful products, from initial strategy to market launch and beyond.
           </p>
         </div>
 
-        <motion.div 
-            className="mt-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-        >
-          <DoubleDiamond items={skillsData} />
-        </motion.div>
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {skillsCategories.map((category, index) => (
+                <motion.div
+                    key={category.title}
+                    custom={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={cardVariants}
+                >
+                    <Card className="h-full flex flex-col bg-background/50 backdrop-blur-sm transition-shadow hover:shadow-lg">
+                        <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-4">
+                            <category.icon className="h-8 w-8 text-primary" />
+                            <CardTitle className="text-xl font-bold">{category.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                            <ul className="space-y-3">
+                                {category.skills.map((skill) => (
+                                    <li key={skill} className="flex items-start">
+                                        <CheckCircle className="h-5 w-5 text-teal-400 mr-3 mt-0.5 flex-shrink-0" />
+                                        <span className="text-muted-foreground">{skill}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            ))}
+        </div>
       </div>
     </section>
   );
