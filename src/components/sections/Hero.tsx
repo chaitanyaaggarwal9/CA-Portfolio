@@ -1,6 +1,8 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Gamepad2 } from 'lucide-react';
 
 
 export function Hero() {
@@ -25,17 +27,19 @@ export function Hero() {
             business strategy with user-centric design to create high-impact experiences.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start justify-center">
-            <Link href="#contact">
-              <button className="rounded-full bg-yellow-400 px-6 py-3 text-black font-semibold hover:bg-yellow-300 transition">
-                Hire Me
-              </button>
-            </Link>
-            <Link href="#experience">
-              <button className="rounded-full border border-white px-6 py-3 font-semibold hover:bg-white hover:text-black transition">
-                My Works
-              </button>
-            </Link>
+          <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <Button asChild size="lg" className="bg-yellow-400 text-black hover:bg-yellow-300">
+                <Link href="#contact">Hire Me</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+                <Link href="#projects">My Works</Link>
+            </Button>
+             <Button asChild size="lg" variant="outline">
+                <Link href="#prioritization-challenge">
+                    <Gamepad2 className="mr-2 h-5 w-5" />
+                    Play Game
+                </Link>
+            </Button>
           </div>
         </div>
 
