@@ -33,7 +33,7 @@ const experienceData = [
 ];
 
 const certificationsData = [
-  { name: 'Certified Scrum Product Owner (CSPO®)', link: '#' },
+  { name: 'Certified Scrum Product Owner (CSPO®)', link: 'https://drive.google.com/file/d/1YAOFXWSCwCaqxuquLP6Hp19-TX7ixvvV/view?usp=sharing' },
   { name: 'Google Project Management', link: '#' },
   { name: 'Product Marketing Bootcamp', link: '#' },
   { name: 'Google Data Analytics', link: '#' },
