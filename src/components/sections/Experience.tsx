@@ -9,7 +9,7 @@ const experienceData = [
         title: 'Master of Science in Engineering Management',
         organization: 'George Washington University',
         period: '08/2023 – 05/2025',
-        description: 'Pursuing a Master\'s degree focused on bridging the gap between engineering and management, with coursework in product management, systems engineering, and technology strategy.',
+        description: 'Completed Master\'s degree focused on bridging the gap between engineering and management, with coursework in product management, systems engineering, and technology strategy.',
       },
       {
         title: 'Technical Support Assistant (Part-time)',

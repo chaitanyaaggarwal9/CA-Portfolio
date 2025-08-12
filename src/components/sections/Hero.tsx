@@ -14,7 +14,7 @@ export function Hero() {
           <p className="text-sm uppercase tracking-widest text-primary mb-2">Welcome to my world</p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-primary">
-            I'm <span className="text-primary">Chaitanya</span> Aggarwal
+            I'm <span className="text-yellow-400">Chaitanya</span> Aggarwal
           </h1>
 
           <p className="mt-4 text-xl text-primary/80">A Product Manager & Tech Innovator</p>
@@ -26,16 +26,16 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start justify-center">
-            <Button asChild>
-              <Link href="#contact">
+            <Link href="#contact">
+              <button className="rounded-full bg-yellow-400 px-6 py-3 text-black font-semibold hover:bg-yellow-300 transition">
                 Hire Me
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="#experience">
+              </button>
+            </Link>
+            <Link href="#experience">
+              <button className="rounded-full border border-white px-6 py-3 font-semibold hover:bg-white hover:text-black transition">
                 My Works
-              </Link>
-            </Button>
+              </button>
+            </Link>
           </div>
         </div>
 
