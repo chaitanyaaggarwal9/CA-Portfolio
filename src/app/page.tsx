@@ -12,6 +12,7 @@ import { Skills } from '@/components/sections/Skills';
 import { Toolbox } from '@/components/sections/Toolbox';
 import { Contact } from '@/components/sections/Contact';
 import { Loader } from '@/components/layout/Loader';
+import { PrioritizationChallenge } from '@/components/sections/PrioritizationChallenge';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ export default function Home() {
               <Projects />
               <Skills />
               <Toolbox />
+              <PrioritizationChallenge />
               <Contact />
             </main>
             <footer className="w-full bg-background/50 py-6 text-center text-sm text-muted-foreground">
