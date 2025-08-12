@@ -2,17 +2,27 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export function Loader() {
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: -20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="text-center"
       >
+        <div className="relative mx-auto mb-8 h-32 w-32 md:h-40 md:w-40">
+           <Image 
+                src="/images/profile-pic.png"
+                alt="Chaitanya Aggarwal"
+                fill
+                className="rounded-full object-cover shadow-2xl"
+                priority
+            />
+        </div>
         <h1 className="text-4xl md:text-6xl font-black font-headline select-none bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
           Chaitanya Aggarwal
         </h1>
