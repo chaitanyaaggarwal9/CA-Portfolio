@@ -17,7 +17,7 @@ export function Loader() {
           Chaitanya Aggarwal
         </h1>
         <p className="mt-4 text-md md:text-lg text-muted-foreground">
-          From Idea to Impact
+          Pioneering Digital Frontiers
         </p>
       </motion.div>
       <motion.div 
