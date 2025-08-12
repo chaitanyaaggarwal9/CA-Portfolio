@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Award } from 'lucide-react';
 
 const experienceData = [
     {
@@ -29,6 +30,17 @@ const experienceData = [
         period: '05/2016 – 07/2020',
         description: 'In this dual role, I spearheaded the development of a real-time labor management system that streamlined manpower planning across 10+ construction sites. By conducting hands-on user research and refining requirements through Agile delivery, I increased system adoption to 90% within the first quarter. I worked closely with development teams to translate business needs into actionable sprint goals, significantly improving coordination and reducing idle time by nearly 50%.',
       },
+];
+
+const certificationsData = [
+  { name: 'Certified Scrum Product Owner (CSPO®)', link: '#' },
+  { name: 'Google Project Management', link: '#' },
+  { name: 'Product Marketing Bootcamp', link: '#' },
+  { name: 'Google Data Analytics', link: '#' },
+  { name: 'Six Sigma Yellow Belt Specialization', link: '#' },
+  { name: 'Supply Chain Management Specialization', link: '#' },
+  { name: 'Oracle AI Vector Certified Professional', link: '#' },
+  { name: 'Oracle Fusion Cloud Applications', link: '#' },
 ];
 
 export function Experience() {
@@ -83,6 +95,33 @@ export function Experience() {
             ))}
           </Accordion>
         </motion.div>
+
+        <motion.div
+          className="mt-16 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+            <h3 className="text-2xl font-bold tracking-tight text-center sm:text-3xl font-headline mb-8">Certifications</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              {certificationsData.map((cert, index) => (
+                <a 
+                  key={index} 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-3 group"
+                >
+                  <Award className="h-5 w-5 text-primary/80 flex-shrink-0" />
+                  <span className="text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                    {cert.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+        </motion.div>
+
       </div>
     </section>
   );
