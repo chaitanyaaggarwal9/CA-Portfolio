@@ -34,13 +34,13 @@ const experienceData = [
 
 const certificationsData = [
   { name: 'Certified Scrum Product Owner (CSPO®)', link: 'https://drive.google.com/file/d/1YAOFXWSCwCaqxuquLP6Hp19-TX7ixvvV/view?usp=sharing' },
-  { name: 'Google Project Management', link: '#' },
-  { name: 'Product Marketing Bootcamp', link: '#' },
-  { name: 'Google Data Analytics', link: '#' },
-  { name: 'Six Sigma Yellow Belt Specialization', link: '#' },
-  { name: 'Supply Chain Management Specialization', link: '#' },
-  { name: 'Oracle AI Vector Certified Professional', link: '#' },
-  { name: 'Oracle Fusion Cloud Applications', link: '#' },
+  { name: 'Google Project Management', link: 'https://www.credly.com/badges/0b4ddcb3-d102-4323-91a3-7434bcc868e3/linked_in_profile' },
+  { name: 'Product Marketing Bootcamp', link: 'https://drive.google.com/file/d/1FjoiWwJ7DGaKh_axvnZpYU2CcPzuOZyx/view' },
+  { name: 'Google Data Analytics', link: 'https://www.credly.com/badges/a4b21e6a-a1a0-4309-9f7e-013075b89fdd/linked_in_profile' },
+  { name: 'Six Sigma Yellow Belt Specialization', link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/TUP2FNSTJCH5' },
+  { name: 'Supply Chain Management Specialization', link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/AWNXCKNVW8KB' },
+  { name: 'Oracle AI Vector Certified Professional', link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=1D2615696DB187E69EC91E42879371D969AD814468AC2F81DC459F0F3F3FF429' },
+  { name: 'Oracle Fusion Cloud Applications', link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=F52F5645951FA5911D1E1ACE06EB338DF9350C73B7FD854F22E1EF4B0F2B02BD' },
 ];
 
 export function Experience() {
