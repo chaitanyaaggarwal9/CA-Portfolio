@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import Image from 'next/image';
 
 // Variant for the main container to orchestrate staggered animations
@@ -39,7 +39,7 @@ const dotVariants = {
   },
 };
 
-const dotTransition = {
+const dotTransition: Transition = {
   duration: 0.6,
   repeat: Infinity, // Repeat the animation forever
   ease: "easeInOut",
